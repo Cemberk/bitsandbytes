@@ -26,7 +26,7 @@ jobs:
             ${{ env.SCHEDULE_CONFIG }}
           pr_branch_prefix: "scheduled-merge"
           requirements_command: >
-            apt install hipblaslt && pip install --upgrade pip && pip install einops lion_pytorch accelerate && ls && pwd && pip install git+https://github.com/ROCm/transformers.git && pip install -r requirements-dev.txt && cmake -DCOMPUTE_BACKEND=hip -S . && make && make hip
+            apt install hipblaslt && pip install --upgrade pip && pip install einops lion_pytorch accelerate && ls && pwd && pip install git+https://github.com/ROCm/transformers.git && mv requirements-dev.txt requirements.txt && pip install -r requirements.txt && cmake -DCOMPUTE_BACKEND=hip -S . && make && make hip
           unit_test_command: pytest -vvv ./tests/ 2>&1 | tee BitsAndBytes_UT_summary.log
           performance_test_command: echo \"python\"
           docker_image: rocm/pytorch:latest

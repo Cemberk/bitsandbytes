@@ -18,7 +18,7 @@ jobs:
       SCHEDULE_CONFIG: ${{ secrets.SCHEDULE_CONFIG }} # Secret storing the schedule JSON
     steps:
       - name: Fork Maintenance System
-        uses: Cemberk/Fork-Maintenance-System@dockerV4 
+        uses: Cemberk/Fork-Maintenance-System@artifacts
         with:
           github_token: ${{ secrets.CRED_TOKEN }}
           upstream_repo: "https://github.com/ROCm/bitsandbytes"

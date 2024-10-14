@@ -21,7 +21,7 @@ jobs:
         uses: Cemberk/Fork-Maintenance-System@artifacts
         with:
           github_token: ${{ secrets.CRED_TOKEN }}
-          upstream_repo: "https://github.com/ROCm/bitsandbytes"
+          upstream_repo: "https://github.com/bitsandbytes-foundation/bitsandbytes"
           schedule_json: |
             ${{ env.SCHEDULE_CONFIG }}
           pr_branch_prefix: "scheduled-merge"

@@ -16,6 +16,7 @@ jobs:
     uses: Cemberk/fork-maintenance-system/.github/workflows/fork-maintenance-action.yml@artifacts
     with:
       #github_token: ${{ secrets.GITHUB_TOKEN }}
+      platform: 'gfx90a'
       upstream_repo: 'https://github.com/bitsandbytes-foundation/bitsandbytes'
       #schedule_json: ${{ secrets.SCHEDULE_CONFIG }}  # Your JSON content
       pr_branch_prefix: 'scheduled-merge'

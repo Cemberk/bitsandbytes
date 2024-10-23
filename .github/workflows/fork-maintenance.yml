@@ -25,7 +25,7 @@ jobs:
       docker_image: 'rocm/pytorch:latest'
       docker_options: '--device=/dev/kfd --device=/dev/dri --group-add video --shm-size 16G --network=host'
     secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       schedule_json: ${{ secrets.SCHEDULE_CONFIG }}
 
     #FOR COMPOSITE WORKFLOW TYPE 

@@ -20,7 +20,7 @@ jobs:
       upstream_repo: 'https://github.com/bitsandbytes-foundation/bitsandbytes'
       #schedule_json: ${{ secrets.SCHEDULE_CONFIG }}  # Your JSON content
       pr_branch_prefix: 'scheduled-merge'
-      requirements_command: 'apt-get install -y build-essential cmake && pip install --upgrade pip && pip install einops lion_pytorch accelerate && ls && pwd && pip install git+https://github.com/ROCm/transformers.git && mv requirements-dev.txt requirements.txt || true && pip install -r requirements.txt && cmake -DCOMPUTE_BACKEND=hip -S . && make && pip install .'
+      requirements_command: 'apt-get install -y build-essential cmake && pip install --upgrade pip && pip install einops lion_pytorch accelerate && ls && pwd && pip install git+https://github.com/ROCm/transformers.git && cp requirements-dev.txt requirements.txt || true && pip install -r requirements.txt && cmake -DCOMPUTE_BACKEND=hip -S . && make && pip install .'
       unit_test_command: 'pytest -vvv ./tests/ 2>&1 | tee BitsAndBytes_UT_summary.log'
       performance_test_command: 'echo \"python\"'
       docker_image: 'rocm/pytorch:latest'
